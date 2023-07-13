@@ -166,10 +166,10 @@ import lucia from 'lucia-auth';
 import { sveltekit } from 'lucia-auth/middleware'; // SvelteKit as an example
 export const auth = lucia({
     middleware: sveltekit(),
-    adapter: adapter({
+    adapter: luciaAdapter({
         auth_key: keys,
-        auth_session: sessions
-        auth_user: users,
+        auth_session: sessions,
+        auth_user: users
     }, {
         // lucia-auth expects the columns to be uniquely.
         auth_key: m => ({
